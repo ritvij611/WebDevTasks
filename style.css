@@ -1,0 +1,307 @@
+body{
+    background-color: azure;
+}
+
+.heading{
+    color: white;
+    background-color: black;
+    height: 50px;
+    font-family: "Copperplate",fantasy;
+    font-size: xxx-large;
+    padding: 10px;
+}
+
+.ul{
+    display: flex;
+}
+
+.nav1{
+    margin-inline-start: 15px;
+    background-color: white;
+    display: flex;
+    align-content: center;
+}
+
+.nav2{
+    background-color: beige;
+    justify-content: space-between;
+    display: flex;
+    align-content: center;
+}
+
+.ul>div{
+    width: fit-content;
+    height: 40px;
+    padding: 8px;
+    align-items: center; 
+    align-content: center;
+    display: flex;    
+}
+
+.nav2>div,.ul>div,.breaking{
+    width: fit-content;
+    height: auto;
+    padding-inline: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.nav1>.svg{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.ul>div:hover{
+    color: white;
+    background-color: black;
+}
+
+.nav2>div:hover{
+    font-weight: bold;
+}
+
+.container{
+    display: flex;
+    height: 70vh;
+    font-family: "Monaco", monospace;
+    margin-top: 20px;
+}
+
+.sec1{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    width: 70%;
+    height: 100%;
+    gap: 15px;
+    margin: 15px;
+}
+
+.sec2{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 15px;
+    height: 105%;
+}
+
+.scroll{
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: scroll;  
+}
+
+.small{
+    background-color: white;
+}
+
+.tabs{
+    display: flex;
+}
+
+#latest,#popular{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cult{
+    grid-column: span 1;
+    background-image: url(Images/newspaper.jpeg);
+    padding: 10px;
+}
+
+.life{
+    grid-column: span 1;
+    background-image: url(Images/jane.jpeg);
+    padding: 10px;
+}
+
+.group{
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+    justify-content: end;
+}
+
+.life,.cult,.food,.health{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    justify-content: end;
+}
+
+.life,.cult,.food,.health,#latest,#popular,.ul>div{
+    border-radius: 5px;
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+.food,.health{
+    height: 50%;
+    padding: 10px;  
+}
+
+.food{
+    background-image: url(Images/coffee.jpeg);   
+}
+
+.health{
+    background-image: url(Images/gratitude.jpeg);   
+}
+
+.btn1, .btn2{
+    color: white;
+    background-color: black;
+    width: fit-content;
+    height: auto;
+    border-radius: 50vh;
+    padding: 5px;
+}
+
+.tabs>div{
+    width: 50%;
+    text-align: center;
+    font-size: larger;
+    height: auto;
+    padding: 8px;
+    background-color: white;
+    color: black;
+}
+
+.tabs>div:hover,.active,.tabs>.active{
+    background-color: black;
+    color: white;
+}
+
+.svg>svg:hover{
+    background-color: black;
+    color: white;
+}
+
+svg{
+    padding: 3px;
+    min-width: 20px;
+    max-width: 20px;
+}
+
+.tag,.cult>.info{
+    display: inline-flex;
+    gap: 10px;
+}
+
+#break{
+    font-weight: bold;
+}
+
+.cult>.headline{
+    font-size: xx-large;
+}
+
+.life>.headline{
+    font-size: x-large;
+}
+
+img{
+    float: left;
+    height: 90px;
+    width: 90px;
+    margin: 10px;
+}
+
+.date,.weather,.theme{
+    display: flex;
+}
+
+#check,#check1{
+    display: none;
+}
+
+#list{
+    min-width: 30px;
+    max-width: 30px;
+}
+
+.content{
+    position: fixed;
+    color: black;
+    background-color: antiquewhite;
+    width: 300px;
+}
+
+@media only screen and (max-width: 1050px){
+    .container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .sec1,.sec2{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:684px){
+    .ul{
+        width: 100%;
+        height: auto;
+        display: none;
+        text-align: center;
+    }
+
+    .nav1{margin: 0;}
+
+    #check1{display: block;}
+    #check:checked ~ .ul{display: block;}
+}
+
+@media only screen and (max-width:780px) {
+    .sec1{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 2fr 1fr;
+        gap: 20px;
+        padding-right: 8px;
+    }
+
+    .sec2{padding-top: 70px;}
+
+    .group{
+        flex-direction: row;
+        grid-column: span 2;
+    }
+    .food,.health{
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width:470px){
+    .sec1{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        padding-right: 8px;
+    }
+
+    .group{
+        flex-direction: column;
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+
+    .cult{
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .sec2{padding-top: 230px;}
+}
+
